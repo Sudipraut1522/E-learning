@@ -67,7 +67,7 @@ const Register: React.FC = () => {
               </span>
             )}
 
-            <div className="flex w-full bg-blue-500 py-2 rounded-md mt-4">
+            <div className="flex w-full bg-blue-600 py-2 rounded-md mt-4">
               <button
                 type="submit"
                 className="text-[16px] text-center mx-auto text-white cursor-pointer"
@@ -82,14 +82,10 @@ const Register: React.FC = () => {
             or Use one of these options
           </p>
           <div className="p-2 flex justify-center text-sm">
-            <button>
-              <img src="/Frame 17.jpg" alt="Option 1" />
-            </button>
+            <button>Continue With email</button>
           </div>
-          <div className="p-2 flex justify-center text-sm text-white">
-            <button>
-              <img src="/Frame 18.jpg" alt="Option 2" />
-            </button>
+          <div className="p-2 flex justify-center text-sm text-white bg-blue-600 rounded-md">
+            <button>FaceBook</button>
           </div>
 
           <div className="flex justify-center text-[14px] mt-8">
