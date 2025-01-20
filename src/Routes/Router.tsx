@@ -7,6 +7,7 @@ import Dashboard from "../page/Dashboard";
 import ProfilePage from "../page/ProfilePage";
 import Search from "../page/Search";
 import CourseIntroPage from "../page/CourseIntroPage";
+import CourseStudyPage from "../page/CourseStudyPage";
 
 const Router = () => {
   return (
@@ -21,6 +22,7 @@ const Router = () => {
           <Route path="/courseintro" element={<CourseIntroPage />} />
         </Route>
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="/coursestudy" element={<CourseStudyPage />} />
       </Routes>
     </BrowserRouter>
   );
