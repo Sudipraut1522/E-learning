@@ -2,20 +2,22 @@ import React from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
-    <div className="h-[104px] bg-[#EFF4FF] flex items-center">
-      <nav className="flex px-0 md:px-8 justify-between w-full text-[#656565] ">
-        <div className="flex md:gap-16 flex-wrap">
+    <div className="h-[104px] bg-[#EFF4FF] flex items-center sticky top-0 z-20 shadow-sm">
+      <nav className="flex px-4 md:px-8 justify-between w-full text-[#656565] ">
+        <div className="flex w-full md:max-w-[500px] md:justify-between flex-wrap">
           <NavLink to="/">
             <h1 className="text-[#2563EB] font-[700] text-[24px] md:mx-auto max-w-[255px] cursor-pointer">
               Braimy.
             </h1>
           </NavLink>
-          <ul className="md:flex hidden gap-4">
+          <ul className="md:flex hidden gap-6 ">
             <li className="flex items-center gap-2 cursor-pointer">
-              <i className="fas fa-home text-gray-400"></i>
-              <span>Home</span>
+              <NavLink to="/">
+                <i className="fas fa-home text-gray-400"></i>
+                <span>Home</span>
+              </NavLink>
             </li>
             <li className="flex items-center gap-2 cursor-pointer">
               <i className="fas fa-book text-gray-400"></i>

@@ -35,7 +35,7 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="md:py-20">
-          <div className=" md:max-w-[1288px] mx-auto w-full">
+          <div className="sm:max-w-[600px] md:max-w-[800px] lg:max-w-[1288px] sm:mx-auto w-full">
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 grid-rows-2">
               <div className="w-full md:max-w-[416px] h-[245px]">
                 <h1 className="text-[54px] font-bold">
