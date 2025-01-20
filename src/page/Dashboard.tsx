@@ -1,5 +1,4 @@
-import React from "react";
-import SideNavForDashboard from "../components/ui/SideNavForDashboard";
+import React, { useState } from "react";
 import InputField from "../components/InputField";
 import { useForm } from "react-hook-form";
 import GoPremium from "../components/GoPremium";
@@ -14,44 +13,50 @@ const Dashboard: React.FC = () => {
       search: "",
     },
   });
+
   return (
-    <div className="flex bg-white ">
-      <div className="flex h-[52px]  w-full md:max-w-[1097px] p-4 flex-col gap-4">
-        <div className="flex justify-between w-full">
-          <div className="flex flex-col">
+    <div className="flex flex-col lg:flex-row bg-white relative">
+      <div className="flex flex-col w-full lg:w-3/4 p-4 gap-4">
+        <div className="flex flex-col md:flex-row justify-between gap-4 pt-10 md:pt-0">
+          <div>
             <h1 className="text-blue-600 text-[24px] font-semibold">
-              Hi Jake, Good Afternoon !
+              Hi Jake, Good Afternoon!
             </h1>
             <p className="text-gray-400 text-xs">
-              Lets learn something new today
+              Let's learn something new today
             </p>
           </div>
           <InputField
             name="searchVideo"
             register={register}
             type="search"
-            placeHolder="search"
-            inputClassName="bg-gray-200 w-[400px] rounded-lg border-none"
+            placeHolder="Search"
+            inputClassName="bg-gray-200 w-full md:w-[400px] rounded-lg border-none"
           />
         </div>
-        <div className="w-full h-[230px]    ">
+
+        <div>
           <GoPremium />
         </div>
-        <div className="flex flex-col gap-4">
-          <h1 className="text-blue-600">OverView</h1>
 
-          <div className="grid ms:grid-cols-2 lg:grid-cols-3 gap-6 md:w-2/3 w-full">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-blue-600">Overview</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <CardInfo />
             <CardInfo />
             <CardInfo />
           </div>
         </div>
+
+        {/* Ongoing Courses Section */}
         <div className="flex flex-col gap-4">
           <div className="flex justify-between text-blue-600 text-xs">
             <p>Counting Reading</p>
-            <a href="">ViewAll</a>
+            <a href="" className="hover:underline">
+              View All
+            </a>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <OnGoingCourse />
             <OnGoingCourse />
             <OnGoingCourse />
@@ -59,34 +64,37 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-1  flex-col border border-gray-300  gap-4 ">
-        <div className="items-center h-[114px] justify-between w-full flex p-4 border border-gray-300">
+
+      {/* Sidebar Content for Large Screens */}
+      <div className="hidden lg:flex flex-1 flex-col p-4 border-l border-gray-300">
+        <div className="flex items-center justify-between gap-4">
           <img
             src="src/assets/updayes.jpg"
-            alt="dasgd"
-            className="h-8 w-8 rounded-full cursor-pointer"
+            alt="User Avatar"
+            className="h-8 w-8 rounded-full"
           />
-
           <div className="flex items-center gap-2">
             <img
-              src="src/assets/updayes.jpg
-        "
-              alt=""
+              src="src/assets/updayes.jpg"
+              alt="User Avatar"
               className="rounded-full h-8 w-8"
             />
             <p className="text-blue-600 text-xs">Sudip</p>
           </div>
         </div>
-        <div className="p-2">
-          <p className=" text-xs text-blue-600">Remainders</p>
-          <div className="p-1 flex flex-col gap-2">
+
+        <div>
+          <p className="text-xs text-blue-600">Reminders</p>
+          <div className="flex flex-col gap-2">
             <Assignment />
             <Assignment />
             <Assignment />
           </div>
-          <p className="text-xs text-blue-600">Events</p>
+        </div>
 
-          <div className="p- flex flex-col gap-2">
+        <div>
+          <p className="text-xs text-blue-600">Events</p>
+          <div className="flex flex-col gap-2">
             <Events />
             <Events />
           </div>
