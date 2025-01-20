@@ -6,6 +6,7 @@ import NavbarLayout from "../layout/NavbarLayout";
 import Dashboard from "../page/Dashboard";
 import ProfilePage from "../page/ProfilePage";
 import Search from "../page/Search";
+import CourseIntroPage from "../page/CourseIntroPage";
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/courseintro" element={<CourseIntroPage />} />
         </Route>
         <Route path="dashboard" element={<Dashboard />} />
       </Routes>
