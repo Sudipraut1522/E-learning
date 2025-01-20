@@ -42,7 +42,9 @@ const Navbar: React.FC = () => {
 
           <div className="flex  items-center gap-3   md:gap-6">
             <i className="fas fa-bell cursor-pointer"></i>
-            <i className="fas fa-search text-gray-500 mr-2 cursor-pointer"></i>
+            <NavLink to="search">
+              <i className="fas fa-search text-gray-500 mr-2 cursor-pointer"></i>
+            </NavLink>
 
             <NavLink to="/register">
               <h2 className="cursor-pointer">Register</h2>
