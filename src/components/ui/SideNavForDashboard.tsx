@@ -9,14 +9,17 @@ import {
   faCog,
 } from "@fortawesome/free-solid-svg-icons";
 import GoPremium from "../GoPremium";
+import { NavLink } from "react-router-dom";
 
 const SideNavForDashboard: React.FC = () => {
   return (
     <div>
       <nav className="w-[332px] flex flex-col gap-6 px-4 top-0 border border-gray-200 h-[840px] bg-blue-50">
-        <div className="p-2">
-          <h1 className="text-[36px] font-[700] text-blue-600">Braimy.</h1>
-        </div>
+        <NavLink to="/">
+          <div className="p-2">
+            <h1 className="text-[36px] font-[700] text-blue-600">Braimy.</h1>
+          </div>
+        </NavLink>
 
         <ul className="h-[360px] flex flex-col gap-2 text-[16px]">
           <li className="flex items-center gap-3 cursor-pointer hover:bg-gray-400 p-2">

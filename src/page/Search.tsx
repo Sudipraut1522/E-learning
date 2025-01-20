@@ -1,6 +1,8 @@
 import React from "react";
 import InputField from "../components/InputField";
 import { useForm } from "react-hook-form";
+import { NavLink } from "react-router-dom";
+import OnGoingCourse from "../components/OnGoingCourse";
 
 const Search: React.FC = () => {
   const { register } = useForm({});
@@ -20,21 +22,39 @@ const Search: React.FC = () => {
             name="search"
             register={register}
             type="search"
-            inputClassName="rounded-lg border-none p-2"
+            inputClassName="rounded-lg border-none p-2 w-full "
             placeHolder="search...."
           />
         </div>
       </header>
-      <div className="md:max-w-[1100px] md:mx-auto">
-        <h1 className="text-[20px] tracking-widest text-gray-600">
+      <div className="md:max-w-[1100px] md:mx-auto flex flex-col gap-2">
+        <h1 className="text-[24px] tracking-widest text-gray-600 ">
           Search Result for <span className="text-blue-600">React js</span>
         </h1>
-        <ul className="flex gap-10 h-[40px] text-[14px] items-center text-gray-600 border border-gray-200">
-          <li>Course</li>
-          <li>Slides</li>
-          <li>learners</li>
-          <li>Blogs</li>
+        <ul className="flex gap-10 h-[40px] text-[18px] items-center text-gray-600 border-b border-gray-200">
+          <NavLink to="" className="flex flex-col gap-1">
+            <li>Course</li>
+            <hr className="bg-blue-600 h-[1.5px] border-none hidden" />
+          </NavLink>
+          <NavLink to="" className="flex flex-col gap-1">
+            <li>Slides</li>
+            <hr className="bg-blue-600 h-[1.5px] border-none hidden" />
+          </NavLink>
+          <NavLink to="" className="flex flex-col gap-1">
+            <li>learners</li>
+            <hr className="bg-blue-600 h-[1.5px] border-none hidden " />
+          </NavLink>
+          <NavLink to="" className="flex flex-col gap-1">
+            <li>Blogs</li>
+            <hr className="bg-blue-600 h-[1.5px] border-none  hidden" />
+          </NavLink>
         </ul>
+        <div className="py-1 px-10 flex flex-col gap-4">
+          <OnGoingCourse />
+          <OnGoingCourse />
+
+          <OnGoingCourse />
+        </div>
       </div>
     </div>
   );
