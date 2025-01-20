@@ -20,9 +20,11 @@ const Navbar: React.FC = () => {
               </NavLink>
             </li>
             <li className="flex items-center gap-2 cursor-pointer">
-              <i className="fas fa-book text-gray-400"></i>
-              <span>Courses</span>
-              <div className="flex-grow h-px bg-gray-600"></div>
+              <NavLink to="courseintro">
+                <i className="fas fa-book text-gray-400"></i>
+                <span>Courses</span>
+                <div className="flex-grow h-px bg-gray-600 hidden"></div>
+              </NavLink>
             </li>
             <li className="flex items-center gap-2 cursor-pointer">
               <i className="fas fa-file-alt text-gray-400"></i>
