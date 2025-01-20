@@ -10,6 +10,7 @@ const Register: React.FC = () => {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isDirty, isValid },
   } = useForm({
     resolver: zodResolver(registerSchema),
@@ -17,14 +18,16 @@ const Register: React.FC = () => {
     defaultValues: {
       email: "",
       password: "",
+      cpassword: "",
     },
   });
+  console.log(watch, "watch");
 
   const onSubmit = (data: RegisterFormData) => {
     console.log(data, "Submitted data");
-
     reset();
   };
+
   return (
     <div>
       <div className="flex justify-center mt-4">
@@ -57,7 +60,7 @@ const Register: React.FC = () => {
               inputClassName="border-gray-400 border rounded-md"
               placeHolder="your password...."
               labelName="Password"
-              type="text"
+              type="password"
               name="password"
               register={register}
             />
@@ -67,13 +70,28 @@ const Register: React.FC = () => {
               </span>
             )}
 
+            <InputField
+              required
+              inputClassName="border-gray-400 border rounded-md"
+              placeHolder="confirm your password...."
+              labelName="Confirm Password"
+              type="password"
+              name="cpassword"
+              register={register}
+            />
+            {errors?.cpassword && (
+              <span className="text-[12px] text-red-600">
+                {errors?.cpassword?.message}
+              </span>
+            )}
+
             <div className="flex w-full bg-blue-600 py-2 rounded-md mt-4">
               <button
                 type="submit"
                 className="text-[16px] text-center mx-auto text-white cursor-pointer"
                 disabled={!isDirty || !isValid}
               >
-                Submit
+                Create Account
               </button>
             </div>
           </form>
@@ -92,8 +110,7 @@ const Register: React.FC = () => {
             <p>
               Already have an Account?
               <span className="text-blue-500">
-                {" "}
-                <NavLink to="/login">Sign in</NavLink>
+                <NavLink to="/login"> Sign in</NavLink>
               </span>
             </p>
           </div>
