@@ -14,8 +14,8 @@ import { NavLink } from "react-router-dom";
 const SideNavForDashboard: React.FC = () => {
   return (
     <div>
-      <nav className="w-[332px] flex flex-col gap-6 px-4 top-0 border border-gray-200 h-[840px] bg-blue-50">
-        <NavLink to="/">
+      <nav className="md:max-w-[332px] flex flex-col gap-6 px-4 top-0 border border-gray-200 h-[840px] bg-blue-50">
+        <NavLink to="/dashboard">
           <div className="p-2">
             <h1 className="text-[36px] font-[700] text-blue-600">Braimy.</h1>
           </div>
@@ -42,10 +42,12 @@ const SideNavForDashboard: React.FC = () => {
             <FontAwesomeIcon icon={faBell} className="text-gray-400" />
             <span>Remainders</span>
           </li>
-          <li className="flex items-center gap-3 cursor-pointer hover:bg-gray-400 p-2">
-            <FontAwesomeIcon icon={faCog} className="text-gray-400" />
-            <span>Settings</span>
-          </li>
+          <NavLink to="setting">
+            <li className="flex items-center gap-3 cursor-pointer hover:bg-gray-400 p-2">
+              <FontAwesomeIcon icon={faCog} className="text-gray-400" />
+              <span>Settings</span>
+            </li>
+          </NavLink>
         </ul>
         <div className="pt-24">
           <GoPremium />

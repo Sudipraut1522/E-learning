@@ -14,13 +14,13 @@ const Navbar: React.FC = () => {
           </NavLink>
           <ul className="md:flex hidden gap-6 ">
             <li className="flex items-center gap-2 cursor-pointer">
-              <NavLink to="/">
+              <NavLink to="/" className="flex gap-2">
                 <i className="fas fa-home text-gray-400"></i>
                 <span>Home</span>
               </NavLink>
             </li>
             <li className="flex items-center gap-2 cursor-pointer">
-              <NavLink to="courseintro">
+              <NavLink to="courseintro" className="flex gap-2 items-center">
                 <i className="fas fa-book text-gray-400"></i>
                 <span>Courses</span>
                 <div className="flex-grow h-px bg-gray-600 hidden"></div>
@@ -47,7 +47,6 @@ const Navbar: React.FC = () => {
             <NavLink to="search">
               <i className="fas fa-search text-gray-500 mr-2 cursor-pointer"></i>
             </NavLink>
-
             <NavLink to="/register">
               <h2 className="cursor-pointer">Register</h2>
             </NavLink>

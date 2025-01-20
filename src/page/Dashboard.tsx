@@ -15,10 +15,8 @@ const Dashboard: React.FC = () => {
     },
   });
   return (
-    <div className="flex ">
-      <SideNavForDashboard />
-
-      <div className="flex h-[52px]  w-full md:max-w-[1097px] p-6 flex-col gap-4">
+    <div className="flex bg-white ">
+      <div className="flex h-[52px]  w-full md:max-w-[1097px] p-4 flex-col gap-4">
         <div className="flex justify-between w-full">
           <div className="flex flex-col">
             <h1 className="text-blue-600 text-[24px] font-semibold">
@@ -81,14 +79,14 @@ const Dashboard: React.FC = () => {
         </div>
         <div className="p-2">
           <p className=" text-xs text-blue-600">Remainders</p>
-          <div className="p-2 flex flex-col gap-2">
+          <div className="p-1 flex flex-col gap-2">
             <Assignment />
             <Assignment />
             <Assignment />
           </div>
           <p className="text-xs text-blue-600">Events</p>
 
-          <div className="p-6 flex flex-col gap-2">
+          <div className="p- flex flex-col gap-2">
             <Events />
             <Events />
           </div>
