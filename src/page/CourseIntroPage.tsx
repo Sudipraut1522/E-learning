@@ -63,7 +63,7 @@ const CourseIntroPage: React.FC = () => {
           <li className="cursor-pointer hover:text-blue-600">Reviews</li>
         </ul>
 
-        <div className="p-6 flex flex-col gap-6">
+        <div className="p-6 flex flex-col gap-6"> 
           <h1 className="font-semibold">Description</h1>
 
           <p className="text-xs text-justify text-gray-600">

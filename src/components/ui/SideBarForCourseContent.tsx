@@ -1,13 +1,48 @@
 import React, { useState } from "react";
-import {
-  FaArrowRight,
-  FaCheckCircle,
-  FaCogs,
-  FaRegQuestionCircle,
-} from "react-icons/fa";
+import { FaCheckCircle, FaCogs, FaRegQuestionCircle } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 
-const SideBarForCourseContent: React.FC = () => {
+type itemClicked = {
+  onItemClick: (id: any) => void;
+  lesson: [];
+};
+type ListItem = {
+  id: number;
+  icon: React.ComponentType<any>;
+  iconColor: string;
+  text: string;
+};
+const data: ListItem[] = [
+  {
+    id: 1,
+    icon: FaCheckCircle,
+    iconColor: "text-green-500",
+    text: "Welcome to the course",
+  },
+  {
+    id: 2,
+    icon: FaRegQuestionCircle,
+    iconColor: "text-blue-500",
+    text: "What is React Js?",
+  },
+  {
+    id: 3,
+    icon: FaRegQuestionCircle,
+    iconColor: "text-yellow-500",
+    text: "Why React but Not js?",
+  },
+  {
+    id: 4,
+    icon: FaCogs,
+    iconColor: "text-gray-500",
+    text: "Setting Up Environment",
+  },
+];
+const SideBarForCourseContent: React.FC<itemClicked> = ({
+  onItemClick,
+  lesson,
+}) => {
+  console.log(lesson);
   const [dropDown, setDropDown] = useState(true);
 
   const handleDropDown = () => {
@@ -41,22 +76,19 @@ const SideBarForCourseContent: React.FC = () => {
                   dropDown ? "max-h-[400px]" : "max-h-0"
                 }`}
               >
-                <ul className="flex flex-col gap-4 w-full p-6 text-gray-600 text-[14px]">
-                  <li className="flex items-center gap-2 py-2">
-                    <FaCheckCircle className="text-green-500" /> Welcome to the
-                    course
-                  </li>
-                  <li className="flex items-center gap-2 py-2">
-                    <FaRegQuestionCircle className="text-blue-500" /> What is
-                    React Js?
-                  </li>
-                  <li className="flex items-center gap-2 py-2">
-                    <FaArrowRight className="text-yellow-500" /> Why React but
-                    Not js?
-                  </li>
-                  <li className="flex items-center gap-2 py-2">
-                    <FaCogs className="text-gray-500" /> Setting Up Environment
-                  </li>
+                <ul className="flex flex-col gap-4 w-full p-6 text-gray-600 text-[14px] cursor-pointer  ">
+                  {data.map((item) => {
+                    return (
+                      <li
+                        key={item.id}
+                        className="flex items-center gap-2 py-2"
+                        onClick={() => onItemClick(item.id)}
+                      >
+                        <item.icon className={item.iconColor} /> {item.text}
+                        {}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -69,11 +101,7 @@ const SideBarForCourseContent: React.FC = () => {
             >
               <span>JavaScript refresher</span>
               <span>
-                <IoMdArrowDropdown
-                  className={` ${
-                    dropDown ? "rotate-180" : "rotate-0"
-                  } transition-transform duration-300`}
-                />
+                <IoMdArrowDropdown />
               </span>
             </div>
           </li>
@@ -100,11 +128,7 @@ const SideBarForCourseContent: React.FC = () => {
             >
               <span>React States & Working with events</span>
               <span>
-                <IoMdArrowDropdown
-                  className={` ${
-                    dropDown ? "rotate-180" : "rotate-0"
-                  } transition-transform duration-300`}
-                />
+                <IoMdArrowDropdown />
               </span>
             </div>
           </li>
@@ -115,11 +139,7 @@ const SideBarForCourseContent: React.FC = () => {
             >
               <span>Rendering listings</span>
               <span>
-                <IoMdArrowDropdown
-                  className={` ${
-                    dropDown ? "rotate-180" : "rotate-0"
-                  } transition-transform duration-300`}
-                />
+                <IoMdArrowDropdown />
               </span>
             </div>
           </li>
@@ -131,11 +151,7 @@ const SideBarForCourseContent: React.FC = () => {
             >
               <span>Styling React Components</span>
               <span>
-                <IoMdArrowDropdown
-                  className={` ${
-                    dropDown ? "rotate-180" : "rotate-0"
-                  } transition-transform duration-300`}
-                />
+                <IoMdArrowDropdown />
               </span>
             </div>
           </li>
@@ -146,11 +162,7 @@ const SideBarForCourseContent: React.FC = () => {
             >
               <span>Debugging React Apps</span>
               <span>
-                <IoMdArrowDropdown
-                  className={` ${
-                    dropDown ? "rotate-180" : "rotate-0"
-                  } transition-transform duration-300`}
-                />
+                <IoMdArrowDropdown />
               </span>
             </div>
           </li>
@@ -161,11 +173,7 @@ const SideBarForCourseContent: React.FC = () => {
             >
               <span>Practice : A complete project</span>
               <span>
-                <IoMdArrowDropdown
-                  className={` ${
-                    dropDown ? "rotate-180" : "rotate-0"
-                  } transition-transform duration-300`}
-                />
+                <IoMdArrowDropdown />
               </span>
             </div>
           </li>
