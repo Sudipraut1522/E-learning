@@ -34,7 +34,7 @@ const SideNavForDashboard: React.FC = () => {
       </div>
 
       <div
-        className={` md:static top-0 left-0 h-auto z-40 transform ${
+        className={` md:static top-0 left-0 h-screen z-40 transform ${
           isMobileVisible ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 transition-transform duration-300 w-[250px]`}
       >

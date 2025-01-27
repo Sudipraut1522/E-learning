@@ -18,3 +18,8 @@ body {
 /* a.active hr {
   display: block;
 } */
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px; 
+  }
+}

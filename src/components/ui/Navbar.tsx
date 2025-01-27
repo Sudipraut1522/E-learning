@@ -47,20 +47,27 @@ const Navbar: React.FC = () => {
                   <div className="flex-grow h-px bg-gray-600 hidden"></div>
                 </NavLink>
               </li>
-              <li className="flex items-center gap-2 cursor-pointer">
-                <i className="fas fa-file-alt text-gray-400"></i>
-                <span>Slides</span>
-                <div className="flex-grow h-px bg-gray-600"></div>
-              </li>
+              <NavLink to="slides" className="flex items-center">
+                <li className="flex items-center gap-2 cursor-pointer">
+                  <i className="fas fa-file-alt text-gray-400"></i>
+                  <span>Slides</span>
+                  <div className="flex-grow h-px bg-gray-600"></div>
+                </li>
+              </NavLink>
             </ul>
           </div>
 
           <div className="flex items-center gap-20 flex-wrap">
             <ul className="md:flex  md:gap-6 hidden">
-              <li className="cursor-pointer">AboutUs</li>
-              <li className="cursor-pointer">ContactUs</li>
-
-              <li className="cursor-pointer">Blog</li>
+              <NavLink to="aboutus">
+                <li className="cursor-pointer">AboutUs</li>
+              </NavLink>
+              <NavLink to="contactus">
+                <li className="cursor-pointer">ContactUs</li>
+              </NavLink>
+              <NavLink to="blog">
+                <li className="cursor-pointer">Blog</li>
+              </NavLink>
             </ul>
 
             <div className="flex  items-center gap-3   md:gap-6">
@@ -100,7 +107,7 @@ const Navbar: React.FC = () => {
           <li className="flex items-center gap-4 p-2 hover:bg-gray-400 w-full justify-center">
             <FaBook className="text-gray-600" />
             <NavLink
-              to="/course"
+              to="/courseintro"
               className={({ isActive }) =>
                 isActive ? "text-blue-600 font-bold" : "text-gray-700"
               }

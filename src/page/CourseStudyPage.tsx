@@ -35,16 +35,17 @@ const CourseStudyPage: React.FC = () => {
   const descriptionSecond = currentContent.description.slice(200, 300);
 
   return (
-    <div className="w-full flex flex-col md:flex-row h-auto">
-      <div className="flex w-full md:max-w-[363px]">
+    <div className="w-full flex flex-col md:flex-row h-screen">
+      <div className="flex w-full md:max-w-[363px] h-auto ">
         <SideBarForCourseContent
           onItemClick={(id) => setSelectIndex(id - 1)}
           lesson={lessons}
         />
       </div>
-      <div className="bg-white md:flex-1 flex-wrap">
-        <div className="h-[96px] bg-white flex items-center px-12 justify-between md:px-8">
-          <div className="flex items-center md:gap-6">
+
+      <div className="bg-gray-200 md:flex-1  ">
+        <div className="h-[96px] bg-white flex items-center md:px-12 justify-between px-4">
+          <div className=" hidden md:flex items-center md:gap-6">
             <IoIosArrowDropleftCircle
               className="text-blue-400 h-7 w-8"
               onClick={handlePreviousState}
@@ -83,20 +84,16 @@ const CourseStudyPage: React.FC = () => {
                 alt="Instructor"
                 className="w-10 h-10 rounded-full"
               />
-              <p className="text-xs">Rohit Harper</p>
+              <p className="text-xs hidden md:block">Rohit Harper</p>
             </div>
           </NavLink>
         </div>
 
-        <div className=" flex flex-col items-center justify-center">
-          <div className="flex flex-col gap-6 md:max-w-[700px] w-full h-full justify-center items-center">
-            <div
-              className="relative w-full justify-center items-center"
-              style={{ paddingTop: "25.25%" }}
-            >
+        <div className=" flex flex-col items-center justify-center h-screen bg-gray-200 p-6">
+          <div className="flex flex-col gap-2 md:max-w-[900px] md:mx-auto w-full h-full justify-center items-center">
+            <div className=" w-full justify-center items-center h-[800px]  pt-16">
               <iframe
-                width="560"
-                height="315"
+                className="h-full w-full object-fill"
                 loading="lazy"
                 src={currentContent.videoUrl}
                 title="YouTube video player"
@@ -106,18 +103,30 @@ const CourseStudyPage: React.FC = () => {
               ></iframe>
             </div>
 
-            <div className="p-4 flex flex-col gap-2">
+            <div className=" flex flex-col gap-2">
               <h1 className="font-semibold text-[24px]">
                 {currentContent.title}
               </h1>
-              <p className="text-xs text-justify flex flex-col gap-7">
+              <p className="text-xs text-justify flex flex-col gap-4">
                 <span>{descriptionFirst}</span>
                 <span>{descriptionSecond}</span>
                 <span className="text-black">
                   This will be a 4-hour course divided into 8 chapters and 36
                   lessons that include articles, video lessons, as well as
                   assignments to help you test yourself. Let's start now without
-                  getting any further delay. Let's dive in.
+                  getting any further delay. Let's dive in Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit. Quae reiciendis optio
+                  architecto ipsa eveniet nulla non voluptatem debitis itaque,
+                  veritatis quam fuga alias possimus deserunt provident tenetur
+                  placeat voluptates culpa. Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit. Dolores velit expedita minima
+                  non, dolorum soluta, distinctio optio iste fugiat quibusdam ut
+                  culpa reprehenderit dolorem, possimus saepe alias. Excepturi,
+                  facere sequi. Sit reprehenderit ea perspiciatis odit delectus
+                  minima nulla. Tempora temporibus non saepe provident, id
+                  illum, culpa perspiciatis recusandae dignissimos deserunt
+                  eligendi nihil sapiente aliquam autem ea officia sed esse
+                  maiores!
                 </span>
               </p>
             </div>

@@ -1,16 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import InputField from "../components/InputField";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import OnGoingCourse from "../components/OnGoingCourse";
-
+const data = [
+  {
+    id: 1,
+    course: "webdevelopment",
+  },
+  {
+    id: 2,
+    course: "Flutter",
+  },
+  {
+    id: 2,
+    course: "Node",
+  },
+];
 const Search: React.FC = () => {
-  const { register } = useForm({});
+  const [search, setSearch] = useState(data);
+
+  const { register, watch } = useForm({
+    defaultValues: {
+      search: "",
+    },
+  });
+
+  const searchQuery = watch("search");
+  const searchCourse = search.filter((data) =>
+    data.course.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase())
+  );
+
+  console.log(searchCourse, "data");
+
   return (
     <div>
-      <header className="flex items-center justify-center bg-blue-50 sm:h-[336px] fkex flex-col gap-6">
+      <header className="flex items-center justify-center bg-blue-50 h-[336px] fkex flex-col gap-6">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-semibold text-blue-600 text-[54px]">
+          <h1 className="font-semibold text-blue-600 text-[30px] md:text-[54px]">
             Finding course made easy
           </h1>
           <p className="text-gray-500 text-xs tracking-widest">
@@ -50,10 +77,9 @@ const Search: React.FC = () => {
           </NavLink>
         </ul>
         <div className="py-1 px-10 flex flex-col gap-4">
-          <OnGoingCourse />
-          <OnGoingCourse />
-
-          <OnGoingCourse />
+          {searchCourse?.map((data) => (
+            <OnGoingCourse data={data} />
+          ))}
         </div>
       </div>
     </div>

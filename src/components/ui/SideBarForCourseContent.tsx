@@ -28,7 +28,7 @@ const SideBarForCourseContent: React.FC<ItemClicked> = ({
   };
   return (
     <>
-      <div className="md:hidden fixed top-7 left-2 z-10">
+      <div className="md:hidden  top-7 left-2 z-10">
         <button
           onClick={toggleMobileSidebar}
           className="text-blue-600 text-xl p-2"
@@ -47,7 +47,7 @@ const SideBarForCourseContent: React.FC<ItemClicked> = ({
             <h1 className="border border-gray-100 h-[96px] flex items-center px-6 w-full">
               Course Content
             </h1>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 sticky overflow-auto top-0 h-screen custom-scrollbar">
               <li>
                 <div className="border border-gray">
                   <div

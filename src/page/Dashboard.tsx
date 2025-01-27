@@ -15,7 +15,7 @@ const Dashboard: React.FC = () => {
   });
 
   return (
-    <div className="flex flex-col lg:flex-row w-full bg-white min-h-screen relative">
+    <div className="flex flex-col lg:flex-row w-full bg-white min-h-screen relative px-8 ">
       {/* Main Content */}
       <div className="flex flex-col w-full lg:w-3/4 p-4 gap-4">
         {/* Header Section */}
@@ -59,17 +59,14 @@ const Dashboard: React.FC = () => {
             </a>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <OnGoingCourse />
-            <OnGoingCourse />
-            <OnGoingCourse />
-            <OnGoingCourse />
+            {[...Array(5)].map((_, index) => (
+              <OnGoingCourse key={index} />
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Sidebar Content */}
-      <div className="hidden lg:flex flex-1 flex-col p-4 border-l border-gray-300">
-        {/* User Section */}
+      <div className="hidden lg:flex flex-1 flex-col p-4 border-l border-gray-300 ">
         <div className="flex items-center justify-between gap-4 mb-4">
           <img
             src="src/assets/updayes.jpg"
