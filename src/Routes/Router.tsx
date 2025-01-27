@@ -25,6 +25,7 @@ const Router = () => {
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="setting" element={<Login />} />
+          <Route path="courseintro" element={<CourseIntroPage />} />
         </Route>
         <Route path="/coursestudy" element={<CourseStudyPage />} />
       </Routes>

@@ -6,8 +6,8 @@ const ProfilePage: React.FC = () => {
   return (
     <div className="w-full md:max-w-[1200px] md:mx-auto pt-6">
       <header className="h-[274px] w-full  flex px-6 justify-between items-center ">
-        <div className="flex gap-4 items-center">
-          <div className="[150px] w-[150px]">
+        <div className="flex gap-4 items-center flex-col md:flex-row">
+          <div className=" md:max-w-[200px] w-full md:h-24 h-auto">
             <img
               src="src/assets/rohit 2.jpg"
               alt=""
@@ -22,7 +22,7 @@ const ProfilePage: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-4 ">
+        <div className="flex flex-col md:gap-4 ">
           <div>
             <p>involvements</p>
             <p className="text-xs text-gray-400">CBO at Life partners</p>
@@ -34,8 +34,8 @@ const ProfilePage: React.FC = () => {
         </div>
       </header>
 
-      <section className="sm:max-w-[980px] sm:mx-auto w-full border-gray-100 border flex flex-col">
-        <ul className="flex justify-between w-full p-2 text-[#516778] text-[14px]">
+      <section className="md:max-w-[980px] md:mx-auto w-full border-gray-100 border flex flex-col">
+        <ul className="flex md:justify-between flex-col md:flex-row gap-2 w-full p-2 text-[#516778] text-[14px]">
           <NavLink to="" className="flex flex-col gap-2">
             <li className="flex items-center gap-2 cursor-pointer">
               <FaUser className="text-blue-500" />
@@ -59,20 +59,20 @@ const ProfilePage: React.FC = () => {
             <FaFileAlt className="text-purple-500" />
             <span>Save Slides</span>
           </li>
-          <li className="flex items-center gap-2 cursor-pointer">
+          <li className="flex items-center md:gap-2 cursor-pointer">
             <FaStar className="text-yellow-500" />
             <span>My Recommendation</span>
           </li>
         </ul>
 
-        <section className="w-full sm:max-w-[700px] sm:mx-auto p-6 flex flex-col gap-6">
-          <div className="rounded-md border border-gray-200 flex  justify-between items-center gap-8 p-6 ">
-            <div className="flex flex-col gap-8">
+        <section className="w-full md:max-w-[700px] md:mx-auto p-6 flex flex-col gap-6">
+          <div className="rounded-md border border-gray-200 flex flex-col md:flex-row justify-between items-center gap-8 p-6 ">
+            <div className="flex flex-col gap-8 ">
               <p className="text-blue-600">Complete your Profile</p>
               <div className="flex justify-between gap-6">
-                <hr className="border-t-1 border-2 border-gray-400 w-[100px]" />
-                <hr className="border-t-1 border-2 border-gray-400 w-[100px]" />
-                <hr className="border-t-1 border-2 border-gray-400 w-[100px]" />
+                <hr className="border-t-1 border-2 border-gray-400 md:w-[100px]" />
+                <hr className="border-t-1 border-2 border-gray-400 md:w-[100px]" />
+                <hr className="border-t-1 border-2 border-gray-400 md:w-[100px]" />
               </div>
               <p className="text-xs text-gray-400">
                 Please complete your profile (1/3)
